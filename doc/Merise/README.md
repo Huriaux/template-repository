@@ -1,4 +1,4 @@
-# Conception d'un système d'information d'une Application e-Commerce
+# Conception d'un système d'information d'une Application e-Commerce (TP)
 
 ### Objectif :
 *L'objectif est de modéliser et de donner une visualisation claire et structurée des données et des processus du système d’information d'une Application e-Commerce.*
@@ -30,16 +30,16 @@
 
 
 ### 1. les Clés Primaires
-Pour spécifier qu'un attribut sert de clé primaire dans une table, on précisera avec l'abréviation "PK" pour "Primary Key" à côté du nom d'attribut concerné. 
+Pour spécifier qu'un attribut sert de **clé primaire** dans une table, on précisera avec l'abréviation "PK" pour "Primary Key" à côté du nom d'attribut concerné. Elle permet d'identifier de manière unique chaque enregistrement.
 **`Customers` :** customer_id\
 **`Orders` :** order_id\
 **`Products` :** product_id
 
 
 ### 2. les Clés Étrangères
-La relation **'one-to-many'**, notée `Customers (1:N) Orders`, nécessite l'insertion de la **clé étrangère** `customer_id` dans la table `Orders`. Cette clé est utilisée dans la table qui représente le "plusieurs" pour faire référence à l'enregistrement de la table qui représente le "un". 
+La **clé étrangère** fait référence à la clé primaire d'une autre table, permettant ainsi de créer une relation entre ces tables. Ici, la relation **'one-to-many'**, notée `Customers (1:N) Orders`, nécessite l'insertion de la **clé étrangère** `customer_id` dans la table `Orders`, avec l'abréviation "FK" pour "Foreign Key" à côté du nom d'attribut. Elle est ainsi ajoutée dans la table qui représente le "plusieurs" pour faire référence à l'enregistrement de la table qui représente le "un". 
 
-Dans cet exemple, "Un client peut passer plusieurs commandes", donc le 'plusieurs' est représenté par la Table `Orders`. Cette **clé étrangère** se réfère à la **clé primaire** de la table `Customers`, assurant ainsi que chaque commande est liée à un client unique.
+Dans cet exemple, "Un client peut passer plusieurs commandes", donc le 'plusieurs' est représenté par la Table `Orders`. Cette **clé étrangère** se réfère à la **clé primaire** de la table `Customers`.
 
 
 ### 3. les Tables d'association
@@ -51,7 +51,7 @@ Ici, la table d'association `OrdersProducts` (anciennement 'include') contient a
 ### 4. le Typage des données
 
 Le **typage des données** des attributs spécifie le genre d'informations que chaque attribut peut contenir dans une base de données.\
-*Ici nous avons plusieurs types, notamment :
+**Ici nous avons plusieurs types, notamment :**
 
 **INTEGER** : Stocke des nombres entiers
 
@@ -100,17 +100,32 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 
 ---
 
-## --- Dictionnaire de données ---
+## **--- Dictionnaire de données ---**
+
 *Le **Dictionnaire de données** sert à recenser et décrire de manière détaillée tous les éléments de données qui sont utilisés dans un système d'information. Au minimum, un dictionnaire de données est composé d'une colonne **Attribut**, **Type**, **Description** et **Exemple**.*
 
 *Ici, nous avons trouvé pertinent d'ajouter une colonne **Contraintes** pour plus de précision, et avons gardé la colonne **Entité** pour plus de clarté dans la lectures du dictionnaire de données.*
 
-*Ainsi le **dictionnaire de données** sert de référence pour comprendre comment les données sont structurées, stockées et utilisées dans une base de données, en fournissant ainsi des détails essentiels pour les développeurs et  personnes en charge de la gestion de la base de données.*
+*Ainsi le **dictionnaire de données** sert de référence pour comprendre comment les données sont structurées, stockées et utilisées dans une base de données, en fournissant ainsi des détails essentiels pour les développeurs et  personnes en charge de la gestion du projet.*
 
 ![Image-MCD](TP-MERISE-Data_Dictionnary.drawio.png)
 
 ---
 
 
-## --- MPD ---
-.
+## **--- MPD ---**
+
+*Le **Modèle Physique de Données** est une représentation détaillée de la base de données qui inclut tous les éléments techniques. Il se concentre sur la manière dont les données seront stockées dans la base de données et sur la spécification des tables, des clés, des contraintes, et des relations entre les tables.*
+
+*C'est l'aboutissement de toute la conception en amont selon la méthodologie Merise.*
+
+*À partir du MPD, des scripts SQL sont générés. Ces scripts inclus des commandes pour créer de tables, définir de clés primaires et étrangères, établir les contraintes d'intégrité (comme les contraintes de non-nullité et d'unicité)* (...)
+
+
+---
+
+## **--- Conclusion ---**
+
+*En résumé, dans la conception d'un système d'information via la méthodologie Merise, chaque étape est fondamentale. Le Modèle Conceptuel de Données (MCD) définit les entités et relations, évoluant en un Modèle Logique de Données (MLD) qui précise les tables et liens. Le dictionnaire de données détaille chaque attribut, en assurant la clarté et l'intégrité du système. Finalement, le Modèle Physique de Données (MPD) concrétise cette structure en un script SQL, prêt pour l'implémentation. Maîtriser Merise est crucial pour développer une base robuste et optimisée pour les applications e-commerce.*
+
+---
