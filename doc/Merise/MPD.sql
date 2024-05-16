@@ -10,7 +10,7 @@ CREATE TABLE Customers (
 -- Table Orders
 CREATE TABLE Orders (
     order_id SERIAL PRIMARY KEY,
-    total_price DECIMAL NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
     CONSTRAINT fk_order_id_customer FOREIGN KEY (customer_id)
     REFERENCES Customers (customer_id)
 );
@@ -20,7 +20,7 @@ CREATE INDex idx_order_id_customer ON Orders (customer_id);
 CREATE TABLE Products (
     product_id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    price DECIMAL NOT NULL,
+    price DECIMAL(5, 2) NOT NULL,
     stock INT NOT NULL
 );
 
