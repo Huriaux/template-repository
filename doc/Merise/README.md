@@ -41,7 +41,9 @@ La relation **'one-to-many'**, notée `Customers (1:N) Orders`, implique l'inser
 Les relations **'many-to-many'**, telles que `Commande --(N:M)-- Product`, exigent l'établissement de **tables d'association**. Ici, une table `OrdersProducts` (anciennement 'include') est créée pour relier chaque commande à plusieurs produits et inversement, afin de faciliter la gestion de ces interactions plus complexe.
 
 ### 4. le Typage des données
-- **Table `Customers`**
+
+### Table `Customers`
+
 | Attribut    | Type de données |
 |-------------|-----------------|
 | customer_id | AUTO_INCREMENT  |
@@ -50,13 +52,15 @@ Les relations **'many-to-many'**, telles que `Commande --(N:M)-- Product`, exige
 | email       | VARCHAR(50)     |
 | address     | VARCHAR(100)    |
 
-- **Table `Orders`**
+### Table `Orders`
+
 | Attribut    | Type de données |
 |-------------|-----------------|
 | order_id    | AUTO_INCREMENT  |
 | total_price | FLOAT(10, 2)    |
 
-- **Table `Products`**
+### Table `Products`
+
 | Attribut   | Type de données |
 |------------|-----------------|
 | product_id | AUTO_INCREMENT  |
@@ -64,11 +68,13 @@ Les relations **'many-to-many'**, telles que `Commande --(N:M)-- Product`, exige
 | price      | FLOAT(5, 2)     |
 | stock      | INTEGER         |
 
-- **Table d'association `OrdersProducts`**
+### Table d'association `OrdersProducts`
+
 | Attribut   | Type de données |
 |------------|-----------------|
 | order_id   | INTEGER         |
 | product_id | INTEGER         |
+
 
 ![Image-MCD](TP-MERISE-MLD.drawio.png)
 
