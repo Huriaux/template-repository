@@ -42,6 +42,16 @@ Les relations **'many-to-many'**, telles que `Commande --(N:M)-- Product`, exige
 
 ### 4. le Typage des données
 
+Le typage des données des attributs spécifie le genre d'informations que chaque attribut peut contenir dans une base de données. Ici nous avons plusieurs types, notamment :
+
+INTEGER : Stocke des nombres entiers
+
+VARCHAR() : Un type de données pour les chaînes de caractères de longueur variable, où "n" représente la longueur maximale de la chaîne.
+
+FLOAT(m, n) : Utilisé pour stocker des nombres réels avec des points décimaux. "m" indique la précision totale et "n" le nombre de chiffres après la virgule. 
+
+AUTO_INCREMENT : Principalement pour les clés primaires, ce type incrémente automatiquement la valeur chaque fois qu'un nouvel enregistrement est inséré.
+
 ### Table `Customers`
 
 | Attribut    | Type de données |
