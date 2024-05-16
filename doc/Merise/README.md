@@ -19,7 +19,7 @@ L'objectif est de modéliser et de donner une visualisation claire et structuré
 ### 3. les Relations avec les Entités et Cardinalités
 **`Customers (1:N) Orders` :** Un client peut passer au moins une commande, alors qu'une commande est passée par un seul et même client.
 
-**`Orders (N:M) Products` :** Une commande peut inclure plusieurs produits, et un produit peut être inclue dans plusieurs commandes
+**`Orders (N:M) Products` :** Une commande peut inclure plusieurs produits, et un produit peut être inclue dans plusieurs commandes. Pour gérer les multiples liaisons de ces deux entités, une **table d'associations** est donc nécéssaire.
 
 ![Image-MCD](TP-MERISE-MCD.drawio.png)
 
@@ -38,46 +38,46 @@ Pour spécifier qu'un attribut sert de clé primaire dans une table, on ajoute l
 La relation **'one-to-many'**, notée `Customers (1:N) Orders`, implique l'insertion de la **clé étrangère** `customer_id` dans la table `Orders`. Cette **clé étrangère** fait référence à la **clé primaire** de la table `Customers`, permettant ainsi de lier chaque commande à un unique client, et garantissant l'intégrité référentielle des données entre les tables.
 
 ### 3. les Tables d'association
-Les relations **'many-to-many'**, telles que `Commande --(N:M)-- Product`, exigent l'établissement de **tables d'association**. Ici, une table `OrdersProducts` serait créée pour relier chaque commande à plusieurs produits et inversement, fafin de faciliter la gestion de ces interactions plus complexes.
+Les relations **'many-to-many'**, telles que `Commande --(N:M)-- Product`, exigent l'établissement de **tables d'association**. Ici, une table `OrdersProducts` (anciennement 'include') est créée pour relier chaque commande à plusieurs produits et inversement, afin de faciliter la gestion de ces interactions plus complexe.
 
 ### 4. le Typage des données
 - **Table `Customers`**
-| Attribut  | Type de données   |\
-| ------- | -------- |\
-| customer_id   | AUTO_INCREMENT    |\
-| lastname   | VARCHAR(50)    |\
-| firstname   | VARCHAR(50)    |\
-| email   | VARCHAR(50)    |\
-| address   | VARCHAR(100)    |
-
+| Attribut    | Type de données |
+|-------------|-----------------|
+| customer_id | AUTO_INCREMENT  |
+| lastname    | VARCHAR(50)     |
+| firstname   | VARCHAR(50)     |
+| email       | VARCHAR(50)     |
+| address     | VARCHAR(100)    |
 
 - **Table `Orders`**
-| Attribut  | Type de données   |\
-| ------- | -------- |\
-| order_id   | AUTO_INCREMENT    |\
-| total-price   | FLOAT(10, 2)    |
-
+| Attribut    | Type de données |
+|-------------|-----------------|
+| order_id    | AUTO_INCREMENT  |
+| total_price | FLOAT(10, 2)    |
 
 - **Table `Products`**
-| Attribut  | Type de données   |\
-| ------- | -------- |\
-| product_id   | AUTO_INCREMENT    |\
-| lastname   | VARCHAR(50)    |\
-| price   | FLOAT(5, 2)    |\
-| stock   | INTEGER    |
+| Attribut   | Type de données |
+|------------|-----------------|
+| product_id | AUTO_INCREMENT  |
+| name       | VARCHAR(50)     |
+| price      | FLOAT(5, 2)     |
+| stock      | INTEGER         |
 
 - **Table d'association `OrdersProducts`**
-| Attribut  | Type de données   |\
-| ------- | -------- |\
-| order_id   | INTEGER    |\
-| product_id   | INTEGER    |
+| Attribut   | Type de données |
+|------------|-----------------|
+| order_id   | INTEGER         |
+| product_id | INTEGER         |
 
 ![Image-MCD](TP-MERISE-MLD.drawio.png)
 
 ---
 
 ## --- Data Dictionnary ---
-.
+Le **Dictionnaire de données** est un document détaillé qui décrit toutes les informations relatives aux données utilisés dans un système d'information. Au minimum, un dictionnaire de données est composé d'une colonne **Attribut**, **Type**, **Description** et **Exemple**. Ici, nous avons trouvé pertinent d'ajouter une colonne **Contraintes** pour plus de précision, et de garder la colonne **Entité** pour plus de clarté dans la lectures du dictionnaire de données. 
+
+Ainsi le **dictionnaire de données** sert de référence pour comprendre comment les données sont structurées, stockées et utilisées dans une base de données, en fournissant ainsi des détails essentiels pour les développeurs et  personnes en charge de la gestion de la base de données.
 
 ![Image-MCD](TP-MERISE-Data_Dictionnary.drawio.png)
 
