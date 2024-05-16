@@ -3,7 +3,8 @@ CREATE TABLE Customers (
     customer_id SERIAL PRIMARY KEY,
     lastname VARCHAR(50) NOT NULL,
     firstname VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL 
+    CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
     address VARCHAR(100) NOT NULL
 );
 
