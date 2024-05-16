@@ -19,18 +19,19 @@
 ### 3. les Relations avec les Entités et Cardinalités
 **`Customers (1:N) Orders` :** Un client peut passer au moins une commande, alors qu'une commande est passée par un seul et même client.
 
-**`Orders (N:M) Products` :** Une commande peut inclure plusieurs produits, et un produit peut être inclue dans plusieurs commandes. Pour gérer les multiples liaisons de ces deux entités, une **table d'associations** sera donc nécéssaire.
+**`Orders (N:M) Products` :** Une commande peut inclure plusieurs produits, et un produit peut être inclue dans plusieurs commandes. Pour gérer les multiples liaisons de ces deux entités, une **table d'association** sera donc nécéssaire.
 
 ![Image-MCD](TP-MERISE-MCD.drawio.png)
 
 ---
 
 ## **--- MLD ---**
-*Le **Modèle Logique des Données** est une représentation plus précise du **MCD**. Lors de cette transition, les **Entités** sont converties en **Tables**. On précisera les **clés primaires** pour chaque **Table** et on ajoute les **clés étrangères** (dans le cas d'une relation 'one-to-one' ou 'one-to-many'), et les **tables d'associations** (dans le cas d'une relation 'many-to-many'), établissent ainsi les liens entre les **Tables** conformément aux associations définies dans le MCD. Le MLD spécifie également les types de données pour chaque attribut (comme VARCHAR, INT, etc.).*
+*Le **Modèle Logique des Données** est une représentation plus précise du **MCD**. Lors de cette transition, les **Entités** sont converties en **Tables**. On précisera les **clés primaires** pour chaque **Table** et on ajoute les **clés étrangères** (dans le cas d'une relation 'one-to-one' ou 'one-to-many'), et les **tables d'association** (dans le cas d'une relation 'many-to-many'), établissent ainsi les liens entre les **Tables** conformément aux associations définies dans le MCD. Le MLD spécifie également les types de données pour chaque attribut (comme VARCHAR, INT, etc.).*
 
 
 ### 1. les Clés Primaires
 Pour spécifier qu'un attribut sert de **clé primaire** dans une table, on précisera avec l'abréviation "PK" pour "Primary Key" à côté du nom d'attribut concerné. Elle permet d'identifier de manière unique chaque enregistrement.
+
 **`Customers` :** customer_id\
 **`Orders` :** order_id\
 **`Products` :** product_id
@@ -106,7 +107,7 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 
 *Ici, nous avons trouvé pertinent d'ajouter une colonne **Contraintes** pour plus de précision, et avons gardé la colonne **Entité** pour plus de clarté dans la lectures du dictionnaire de données.*
 
-*Ainsi le **dictionnaire de données** sert de référence pour comprendre comment les données sont structurées, stockées et utilisées dans une base de données, en fournissant ainsi des détails essentiels pour les développeurs et  personnes en charge de la gestion du projet.*
+*Ainsi le **dictionnaire de données** sert de référence pour comprendre comment les données sont structurées, stockées et utilisées, en fournissant ainsi des détails essentiels pour les développeurs et les personnes en charge de la gestion du projet.*
 
 ![Image-MCD](TP-MERISE-Data_Dictionnary.drawio.png)
 
@@ -115,17 +116,19 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 
 ## **--- MPD ---**
 
-*Le **Modèle Physique de Données** est une représentation détaillée de la base de données qui inclut tous les éléments techniques. Il se concentre sur la manière dont les données seront stockées dans la base de données et sur la spécification des tables, des clés, des contraintes, et des relations entre les tables.*
+*Le **Modèle Physique de Données** est une représentation détaillée de la base de données qui inclut tous les éléments techniques. Il se concentre sur la manière dont les données seront stockées et sur la spécification des tables, des clés, des contraintes, et des relations entre les tables.*
 
 *C'est l'aboutissement de toute la conception en amont selon la méthodologie Merise.*
 
-*À partir du MPD, des scripts SQL sont générés. Ces scripts inclus des commandes pour créer de tables, définir de clés primaires et étrangères, établir les contraintes d'intégrité (comme les contraintes de non-nullité et d'unicité)* (...)
+*À partir du MPD, des scripts SQL sont générés. Ces scripts inclus des commandes pour créer de tables, définir les clés primaires et étrangères, établir les contraintes d'intégrité (comme les contraintes de non-nullité et d'unicité)* 
+
+(...)
 
 
 ---
 
 ## **--- Conclusion ---**
 
-*En résumé, dans la conception d'un système d'information via la méthodologie Merise, chaque étape est fondamentale. Le Modèle Conceptuel de Données (MCD) définit les entités et relations, évoluant en un Modèle Logique de Données (MLD) qui précise les tables et liens. Le dictionnaire de données détaille chaque attribut, en assurant la clarté et l'intégrité du système. Finalement, le Modèle Physique de Données (MPD) concrétise cette structure en un script SQL, prêt pour l'implémentation. Maîtriser Merise est crucial pour développer une base robuste et optimisée pour les applications e-commerce.*
+*En résumé, dans la conception d'un système d'information via la méthodologie Merise, chaque étape est fondamentale. Le Modèle Conceptuel de Données (MCD) définit les entités et relations, évoluant en un Modèle Logique de Données (MLD) qui précise les tables et liens. Le dictionnaire de données détaille chaque attribut, en assurant la clarté et l'intégrité du système. Finalement, le Modèle Physique de Données (MPD) concrétise cette structure en un script SQL, prêt pour l'implémentation. Maîtriser Merise est crucial pour développer une base robuste et optimisée pour le développement d'applications.*
 
 ---
