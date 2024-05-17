@@ -1,4 +1,4 @@
-# Conception d'un système d'information d'une Application e-Commerce (TP)
+# Conception d'un système d'information d'une Application e-Commerce (TP-MERISE-module-2)
 
 ### Objectif :
 *L'objectif est de modéliser et de donner une visualisation claire et structurée des données et des processus du système d’information d'une Application e-Commerce.*
@@ -135,3 +135,99 @@ Indexation : (...)
 *En résumé, dans la conception d'un système d'information via la méthodologie Merise, chaque étape est fondamentale. Le Modèle Conceptuel de Données (MCD) définit les entités et relations, évoluant en un Modèle Logique de Données (MLD) qui précise les tables et liens. Le dictionnaire de données détaille chaque attribut, en assurant la clarté et l'intégrité du système. Finalement, le Modèle Physique de Données (MPD) concrétise cette structure en un script SQL, prêt pour l'implémentation. Maîtriser Merise est crucial pour développer une base robuste et optimisée pour le développement d'applications.*
 
 ---
+---
+
+# Mise en application de la 1NF (TP-NORMALISATION-module-3)
+
+## **--- 1. Appliquer les principes de la 1NF à la table "EmployésLangues" ---**
+
+| EmployeID    | Nom      | Langues    |
+|--------------|----------|------------|
+| 1            | Alice    | Anglais    |
+| 1            | Alice    | Français   |
+| 2            | Bob      | Espagnol   |
+| 3            | Charlie  | Anglais    |
+| 3            | Charlie  | Allemand   |
+
+## **--- 2. Appliquer les principes de la 1NF à la table "CoursMatériaux" ---**
+
+| CoursID    | Nom du cours    | Matériaux          |
+|------------|-----------------|--------------------|
+| 1          | Math 101        | Livre de texte     |
+| 1          | Math 101        | Cahier d'exercices |
+| 2          | Histoire 202    | Livre de texte     |
+| 2          | Histoire 202    | Atlas              |
+
+## **--- 3. Appliquer les principes de la 1NF à la table "PatientsConditions" ---**
+
+| PatientID    | Nom               | Conditions      |
+|--------------|-------------------|-----------------|
+| 1            | Legrand Denise    | Diabète         |
+| 1            | Legrand Denise    | Hypertension    |
+| 2            | Calembour Éric    | Allergies       |
+| 3            | Dupont Françoise  | Asthme          |
+| 3            | Dupont Françoise  | Allergies       |
+
+
+---
+
+# Mise en application de la 1NF (TP-NORMALISATION-module-3)
+
+## **--- 1. Appliquer les principes de la 2NF à la table "VentesProduits" ---**
+
+- Table `Produits` 
+
+| ID_Produit  | Nom_Produit   |
+|-------------|---------------|
+| 100         | Café Arabica  |
+| 101         | Thé Earl Grey |
+
+
+- Table `Vente`
+
+| ID_Vente | ID_Produit  | Quantité | Date_Vente |
+|----------|-------------|----------|------------|
+| 1        | 100         | 2        | 2024-04-15 |
+| 1        | 101         | 1        | 2024-04-16 |
+| 2        | 100         | 3        | 2024-04-17 |
+
+
+## **--- 2. Appliquer les principes de la 2NF à la table "CommandesClients" ---**
+
+- Table `Commandes`
+
+| ID_Commande | ID_Client | Date_Commande |        
+| ----------- | --------- | ------------- |
+| 1           | 456       | 2024-04-15    |
+| 2           | 789       | 2024-04-16    |
+
+- Table `Clients`
+
+| ID_Client | Prénom_Client | Nom_Client   | Adresse_Client        |
+| --------- | ------------- | ------------ | --------------------- |
+| 456       | Jeanne        | Voila        | 123 Rue de Paris      |
+| 789       | Pierre        | Paul         | 456 Avenue des Fleurs |
+
+
+
+## **--- 3. Appliquer les principes de la 2NF à la table "InscriptionsActivités" ---**
+
+- Table `Inscriptions`
+
+| ID_Activité | ID_Participant | Nom_Activité |
+| ----------- | -------------- | ------------ |
+| A1          | 001            | Natation     |
+| B2          | 002            | Yoga         |
+
+- Table `Participants`
+
+| ID_Participant | Prénom_Participant | Nom_Participant | Âge_Participant |
+| -------------- | ------------------ | --------------- | --------------- |
+| 001            | Alice              | L'eau           | 12              |
+| 002            | Bob                | Zen             | 34              |
+
+---
+
+# Mise en application de la 1NF (TP-NORMALISATION-module-3)
+
+## **--- 1. Appliquer les principes de la 2NF à la table "VentesProduits" ---**
