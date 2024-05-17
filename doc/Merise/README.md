@@ -12,7 +12,7 @@
 **`Products` :** Les produits disponible dans la boutique
 
 ### 2. les Attributs
-**`Customers` :** lastname, firstname, email, address\
+**`Customers` :** lastname, firstname, email, street, postal_code, city\
 **`Orders` :** total_price\
 **`Products` :** name, price, stock
 
@@ -71,7 +71,9 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 | lastname    | VARCHAR(50)     |
 | firstname   | VARCHAR(50)     |
 | email       | VARCHAR(50)     |
-| address     | VARCHAR(100)    |
+| street      | VARCHAR(100)    |
+| postal_code | INTEGER(5)      |
+| city        | VARCHAR(50)     |
 
 **- Table `Orders`**
 

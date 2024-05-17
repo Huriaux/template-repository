@@ -5,7 +5,10 @@ CREATE TABLE Customers (
     firstname VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL 
     CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
-    address VARCHAR(100) NOT NULL
+    street VARCHAR(100) NOT NULL,
+    postal_code INT(5) NOT NULL,
+    city VARCHAR(50) NOT NULL
+
 );
 
 -- Table Orders
