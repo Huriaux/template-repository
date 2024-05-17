@@ -100,7 +100,7 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 | product_id | INTEGER         |
 
 
-![Image-MCD](TP-MERISE-MLD.drawio.png)
+![Image-MLD](TP-MERISE-MLD.drawio.png)
 
 ---
 
@@ -112,7 +112,7 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 
 *Ainsi le **dictionnaire de données** sert de référence pour comprendre comment les données sont structurées, stockées et utilisées, en fournissant ainsi des détails essentiels pour les développeurs et les personnes en charge de la gestion du projet.*
 
-![Image-MCD](TP-MERISE-Data_Dictionnary.drawio.png)
+![Image-Data-Distionnary](TP-MERISE-Data_Dictionnary.drawio.png)
 
 ---
 
