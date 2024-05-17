@@ -79,6 +79,7 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 |-------------|-----------------|
 | order_id    | AUTO_INCREMENT  |
 | total_price | FLOAT(10, 2)    |
+| customer_id | INTEGER         |
 
 **- Table `Products`**
 
@@ -122,7 +123,7 @@ Le **typage des données** des attributs spécifie le genre d'informations que c
 
 *À partir du MPD, des scripts SQL sont générés. Ces scripts inclus des commandes pour créer de tables, définir les clés primaires et étrangères, établir les contraintes d'intégrité (comme les contraintes de non-nullité et d'unicité)* 
 
-(...)
+Indexation : (...)
 
 
 ---
