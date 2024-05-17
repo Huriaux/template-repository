@@ -171,7 +171,7 @@ Indexation : (...)
 
 ---
 
-# Mise en application de la 1NF (TP-NORMALISATION-module-3)
+# Mise en application de la 2NF (TP-NORMALISATION-module-3)
 
 ## **--- 1. Appliquer les principes de la 2NF à la table "VentesProduits" ---**
 
@@ -228,6 +228,41 @@ Indexation : (...)
 
 ---
 
-# Mise en application de la 1NF (TP-NORMALISATION-module-3)
+# Mise en application de la 3NF (TP-NORMALISATION-module-3)
 
-## **--- 1. Appliquer les principes de la 2NF à la table "VentesProduits" ---**
+## **--- 1. Appliquer les principes de la 3NF à la table "Employés" ---**
+
+| ID_Employé | Nom_Employé | ID_Département |
+| ---------- | ----------- | -------------- |
+| 1          | Alice       | D1             |
+| 2          | Bob         | D2             |
+
+| ID_Département | Nom_Département | Adresse_Département       |
+| -------------- | --------------- | ------------------------- |
+| D1             | RH              | 123 Rue des Ressources    |
+| D2             | IT              | 456 Rue de l'Informatique |
+
+## **--- 2. Appliquer les principes de la 3NF à la table "Restaurants" ---**
+
+| ID_Restaurant | ID_Ville     | Nom_Restaurant | Type_Cuisine |
+| ------------- | ------------ | -------------- | ------------ |
+| 1             | 1            | Chez Anne      | Française    |
+| 2             | 2            | Bella Napoli   | Italienne    |
+
+| ID_Ville     | Adresse         | Ville |
+| ------------ | --------------- | ----- |
+| 1            | 10 rue de Paris | Paris |
+| 2            | 25 via Roma     | Rome  |
+
+## **--- 3. Appliquer les principes de la 3NF à la table "Cours" ---**
+
+| ID_Cours | Titre_Cours   | ID_Professeur |
+| -------- | ------------- | ------------- |
+| C101     | Mathématiques | P001          |
+| C102     | Informatique  | P002          |
+
+| ID_Professeur | Professeur  | Département_Professeur |
+| ------------- | ----------- | ---------------------- |
+| C101          | Mme. Durant | Mathématiques          |
+| C102          | M. Dupont   | Informatique           |
+
